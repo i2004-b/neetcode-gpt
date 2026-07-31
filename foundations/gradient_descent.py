@@ -6,12 +6,10 @@ class Solution:
         # Round final answer to 5 decimal places
         
         # Initialize x_old and x_new to be init
-        x_new = x_old = init
-        # Iterate for a certain number of times
+        x_new = init
+
         for _ in range(iterations):
-            x_new = x_old - learning_rate * (2 * x_old)
-            # Assign x_old to x_new for the next iteration
-            x_old = x_new
+            x_new = x_new - learning_rate * (2 * x_new)
 
         return round(x_new, 5)
 
