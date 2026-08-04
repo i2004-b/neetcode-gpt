@@ -29,7 +29,7 @@ class Solution:
         weights = initial_weights
         for _ in range(num_iterations):
             pred = self.get_model_prediction(X, weights)
-            for j in range(3):
+            for j in range(len(initial_weights)):
                 gradient = self.get_derivative(pred, Y, len(X), X, j)
                 weights[j] -= 0.01 * gradient
 
