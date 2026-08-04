@@ -31,6 +31,6 @@ class Solution:
             pred = self.get_model_prediction(X, weights)
             for j in range(len(initial_weights)):
                 gradient = self.get_derivative(pred, Y, len(X), X, j)
-                weights[j] -= 0.01 * gradient
+                weights[j] -= self.learning_rate * gradient
 
         return np.round(weights, 5)
