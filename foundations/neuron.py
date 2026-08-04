@@ -23,6 +23,8 @@ class Solution:
             res = 1 / (1 + np.exp(-z))
         elif activation == "relu":
             res = max(0, z)
+        else:
+            res = z # For linear
 
         return float(np.round(res, 5))
 
