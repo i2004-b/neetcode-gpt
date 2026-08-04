@@ -20,11 +20,11 @@ class Solution:
         z = x @ w + b
 
         if activation == "sigmoid":
-            res = 1 / (1 + np.exp(-z))
+            res = 1.0 / (1.0 + np.exp(-z))
         elif activation == "relu":
-            res = max(0, z)
+            res = np.maximum(0.0, z)
         else:
             res = z # For linear
 
-        return float(np.round(res, 5))
+        return np.round(res, 5)
 
