@@ -15,13 +15,11 @@ class Solution:
         layers = len(weights)
 
         # Want to apply relu to all layers except the last one
-        for j in range(layers):
-            z = x @ weights[j] + biases[j]
+        for i in range(layers):
+            x = x @ weights[i] + biases[i]
 
-            if j != layers - 1:
-                x = np.maximum(0.0, z)
-            else:
-                x = z
+            if i != layers - 1:
+                x = np.maximum(0.0, x)
 
-        return x
+        return np.round(x, 5)
 
