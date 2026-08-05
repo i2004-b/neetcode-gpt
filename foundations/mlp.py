@@ -18,7 +18,7 @@ class Solution:
         for i in range(layers):
             x = x @ weights[i] + biases[i]
 
-            if i != layers - 1:
+            if i < layers - 1:
                 x = np.maximum(0.0, x)
 
         return np.round(x, 5)
